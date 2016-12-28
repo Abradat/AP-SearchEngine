@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<meta name="description" content="Learn how to recreate the preloader from Cantina Negrar. Tutorial for a passionate front-end web developers by Petr Tichy.">
+
+</head>
+<body style="text-align: center; background-color:#e6e6e6;">
+
+	<div class="container">
+		<div class="well" style="max-width: 60%; max-height: 100%; margin-top: 5%; margin-left: 20%; background-color: #2c3e4f; padding: 3%;">
+			<!--<h2 id = "main_header" style="margin: 40px; color: white;">ShaHoVa</h2>
+			!-->
+			<img src="{{ url_for('static', filename='images/logo.png') }}">
+			<!--<input type="text" class="form-control" id="usr" placeholder="Enter your name" style="margin-bottom: 5%; width:40%; margin-left: 30%; border-radius:0px;">
+			!-->
+			<br>
+		  	<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo" style = "border-radius:0px; width: 60%;text-align: center; margin-bottom: 5%;">Start Searching</button>
+
+		  	<div id="demo" class="collapse">
+		  		<form action="{{url_for("basic_search")}}" method="post">
+			  		<input type="text" class="form-control" id="usr" name = "words" placeholder="What is in your mind" style="margin-bottom: 5%; width:40%; margin-left: 28%; border-radius:0px; float:left;">
+			  		<input type="submit" value = "Search" class="btn btn-primary" style=" float: left; margin-left: 1%; border-radius:0px;">
+		  		</form>
+		  		<br>
+		  		<button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#demo2" style = "border-radius:0px; width: 40%;text-align: center; margin-bottom: 5%;">Optional Searching</button>
+
+		  		<div id= "demo2" class="collapse">
+		  			<form action="{{url_for("advance_search")}}" method="post">
+			  			<input type="text" class="form-control" id="usr" placeholder="AND" name = "and" style="margin-bottom: 5%; width:40%; margin-left: 30%; border-radius:0px; ">
+
+			  			<input type="text" class="form-control" id="usr" placeholder="OR" name = "or" style="margin-bottom: 5%; width:40%; margin-left: 30%; border-radius:0px; ">
+
+			  			<input type="text" class="form-control" id="usr" placeholder="NOT" name="not"  style="margin-bottom: 5%; width:40%; margin-left: 30%; border-radius:0px; ">
+
+			  			<input type="submit" value = "Search" class="btn btn-primary" style="border-radius:0px; width: 20%; text-align: center; ">
+		  			</form>
+		  		</div>
+		  		<br><br>
+		  	</div>
+
+			<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#demo3" style = "border-radius:0px; width: 60%;text-align: center; margin-bottom: 5%;">History</button>
+			<div id = "demo3" class="collapse">
+				<form action="{{url_for("history_search")}}" method="post">
+					<input type="text" class="form-control" id="history_count" placeholder="Number of last histories" name = "history_count" style="margin-bottom: 5%; width:40%; margin-left: 30%; border-radius:0px; ">
+					<input type="submit" value = "Search History" class="btn btn-warning" style="border-radius:0px; width: 20%; text-align: center; ">
+				</form>
+			</div>
+			<!--<form action="" method="">
+				<input type="text" class="form-control" id="usr" placeholder="Enter your name" style="margin-bottom: 5%; width:40%; margin-left: 30%; border-radius:0px;">
+				<input type="submit" value="History" class="btn btn-success" onclick="location.href='http://www.flashkhor.com'" data-toggle="collapse" style = "border-radius:0px; width: 60%;text-align: center; margin-bottom: 5%;">History</input>
+			</form>
+			!-->
+	  	</div>
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="js/main.js"></script>
+</body>
+</html>

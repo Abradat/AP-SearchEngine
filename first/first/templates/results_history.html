@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<meta name="description" content="Learn how to recreate the preloader from Cantina Negrar. Tutorial for a passionate front-end web developers by Petr Tichy.">
+
+</head>
+<body style="text-align: center; background-color:#e6e6e6;">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid" style="border-radius: 0%; background-color: #2c3e4f;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">History Results</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar"">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+	<div class="container">
+		<div class="well" style="max-width: 60%; max-height: 100%; margin-top: 5%; margin-left: 20%; background-color: #2c3e4f; padding: 3%;">
+              <table class="table table-hover" style = "text-align: center;">
+                  <thead>
+                  <tr>
+                      <th style="text-align: center; color: #e6e6e6;">#</th>
+                      <th style="text-align: center; color: #e6e6e6;">AND Words</th>
+                      <th style="text-align: center; color: #e6e6e6;">OR words</th>
+                      <th style="text-align: center; color: #e6e6e6;">NOT words</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% set counter = 1 %}
+                  {% for result in results %}
+                  <tr class="warning">
+                      <td>{{counter}}</td>
+                      {% set counter = counter + 1 %}
+                      <td>{{result[0]}}</td>
+                      <td>{{result[1]}}</td>
+                      <td>{{result[2]}}</td>
+                  {% endfor %}
+                </tbody>
+              </table>
+	  	</div>
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="js/main.js"></script>
+</body>
+</html>
